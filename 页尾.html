@@ -138,7 +138,11 @@
 		    	classification = $("#BlogPostCategory").html();
 		    	classification = classification.substring(3,classification.length);
 		    }else{
-		    	classification = '<a href="https://cnblogs.com/'+currentBlogApp+'">暂未分类</a>';
+                var titleContent = document.getElementsByTagName("title")[0].innerHTML
+                titleContent = titleContent.substring(0,titleContent.indexOf(" "));
+		    	// classification = '<a href="https://cnblogs.com/'+currentBlogApp+'">暂未分类</a>';
+                classification = '<a href="https://cnblogs.com/' + currentBlogApp + '">' + titleContent + '</a>';
+
 		    }
 		    var ftitle = 'Published on '+ $("#post-date").html() + ' in ' +  classification
 		    + ' with <a href="https://cnblogs.com/'+currentBlogApp+'">' + nickName + '</a>';
